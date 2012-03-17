@@ -1,0 +1,30 @@
+v 0.8.3 May 31 2003:
+	Fix compile problem on Solaris (contribution from Masahiro Maeda).
+
+v 0.8.2 Nov 06 2002:
+	Bug fix in installation procedure.
+	Minor debug of XHTML output.
+
+v 0.8.1 Aug 02 2002:
+	XHTML output.
+	Minor debug for enumeration constants.
+
+v 0.8.0 Dec 16 2001:
+	Useless links disappear.
+
+v 0.6.1 Jun 11 2001:
+	Bug fixe.
+
+v 0.6.0 Jan 09 2001:
+	XHB output. Command line options. First stable release.
+
+v 0.5.0 Jan 09 2001:
+	HTML output for C/C++ tags.
+
+v 0.3.0 Dec 30 2001:
+	HTML output for C tags.
+
+v 0.1.0 Dec 25 2001:
+	Read C/C++ header files and display the resulting XML tree.
+
+Project started Dec 18 2000

@@ -1,0 +1,106 @@
+<HTML>
+<BODY BGCOLOR="#FFFFFF">
+<FONT SIZE="-1">/&nbsp;styx_dom.hh&nbsp;/&nbsp;Objects&nbsp;/&nbsp;StyxDom&nbsp;/&nbsp;Private Methods&nbsp;/&nbsp;Description</FONT>
+<CENTER>
+	<H1>Private Methods</H1>
+	<BR>
+	<TABLE WIDTH="80%"><TR><TD>		<HR WIDTH="100%">
+		<A NAME="openTagHandler"></A>
+		<H3>openTagHandler</H3>
+		
+		<BLOCKQUOTE><PRE>void			<B>openTagHandler</B>(string name, vector<StyxSaxAttr*> attr);</PRE></BLOCKQUOTE>
+		Method called when an open tag is founded by the SAX parser.<BR><BR>
+		<B>Parameters</B>
+		<CENTER><TABLE BORDER="1" WIDTH="80%%">
+			<TR><TD ALIGN="CENTER"><TT>name</TT></TD><TD>&nbsp;Name of the tag.</TD></TR>
+			<TR><TD ALIGN="CENTER"><TT>attr</TT></TD><TD>&nbsp;All attributes of the node.</TD></TR>
+		</TABLE></CENTER><BR>
+		<HR WIDTH="100%">
+		<A NAME="insideTextHandler"></A>
+		<H3>insideTextHandler</H3>
+		
+		<BLOCKQUOTE><PRE>void			<B>insideTextHandler</B>(char c);</PRE></BLOCKQUOTE>
+		Method called when a character is founded b the SAX parser between an open and a close tag.<BR><BR>
+		<B>Parameters</B>
+		<CENTER><TABLE BORDER="1" WIDTH="80%%">
+			<TR><TD ALIGN="CENTER"><TT>c</TT></TD><TD>&nbsp;The founded character.</TD></TR>
+		</TABLE></CENTER><BR>
+		<HR WIDTH="100%">
+		<A NAME="closeTagHandler"></A>
+		<H3>closeTagHandler</H3>
+		
+		<BLOCKQUOTE><PRE>void			<B>closeTagHandler</B>(string tagName);</PRE></BLOCKQUOTE>
+		Method called by the SAX parser when a close tag is founded.<BR><BR>
+		<B>Parameters</B>
+		<CENTER><TABLE BORDER="1" WIDTH="80%%">
+			<TR><TD ALIGN="CENTER"><TT>tagName</TT></TD><TD>&nbsp;Name of the tag.</TD></TR>
+		</TABLE></CENTER><BR>
+		<HR WIDTH="100%">
+		<A NAME="commentHandler"></A>
+		<H3>commentHandler</H3>
+		
+		<BLOCKQUOTE><PRE>void			<B>commentHandler</B>(string content);</PRE></BLOCKQUOTE>
+		Method called when the SAX parser find an XML comment tag.<BR><BR>
+		<B>Parameters</B>
+		<CENTER><TABLE BORDER="1" WIDTH="80%%">
+			<TR><TD ALIGN="CENTER"><TT>content</TT></TD><TD>&nbsp;The content of the tag.</TD></TR>
+		</TABLE></CENTER><BR>
+		<HR WIDTH="100%">
+		<A NAME="processingInstructionHandler"></A>
+		<H3>processingInstructionHandler</H3>
+		
+		<BLOCKQUOTE><PRE>void			<B>processingInstructionHandler</B>(string target,
+						     string content);</PRE></BLOCKQUOTE>
+		Method called when a processing instruction tag is founded by the SAX parser.<BR><BR>
+		<B>Parameters</B>
+		<CENTER><TABLE BORDER="1" WIDTH="80%%">
+			<TR><TD ALIGN="CENTER"><TT>target</TT></TD><TD>&nbsp;Name of the processing instruction's target.</TD></TR>
+			<TR><TD ALIGN="CENTER"><TT>content</TT></TD><TD>&nbsp;Content of the instruction.</TD></TR>
+		</TABLE></CENTER><BR>
+		<HR WIDTH="100%">
+		<A NAME="cdataHandler"></A>
+		<H3>cdataHandler</H3>
+		
+		<BLOCKQUOTE><PRE>void			<B>cdataHandler</B>(string content);</PRE></BLOCKQUOTE>
+		Method called when a CDATA tag is founded by the SAX parser.<BR><BR>
+		<B>Parameters</B>
+		<CENTER><TABLE BORDER="1" WIDTH="80%%">
+			<TR><TD ALIGN="CENTER"><TT>content</TT></TD><TD>&nbsp;Content of the tag.</TD></TR>
+		</TABLE></CENTER><BR>
+		<HR WIDTH="100%">
+		<A NAME="errorHandler"></A>
+		<H3>errorHandler</H3>
+		
+		<BLOCKQUOTE><PRE>void			<B>errorHandler</B>(int line);</PRE></BLOCKQUOTE>
+		Method called by the SAX parser when a parse error occurs.<BR><BR>
+		<B>Parameters</B>
+		<CENTER><TABLE BORDER="1" WIDTH="80%%">
+			<TR><TD ALIGN="CENTER"><TT>line</TT></TD><TD>&nbsp;Line number where the error is placed.</TD></TR>
+		</TABLE></CENTER><BR>
+		<HR WIDTH="100%">
+		<A NAME="_xpathContainsPipe"></A>
+		<H3>_xpathContainsPipe</H3>
+		
+		<BLOCKQUOTE><PRE>bool			<B>_xpathContainsPipe</B>(string str);</PRE></BLOCKQUOTE>
+		Used by XPath functions to know if a string contains a '|'.<BR><BR>
+		<B>Parameters</B>
+		<CENTER><TABLE BORDER="1" WIDTH="80%%">
+			<TR><TD ALIGN="CENTER"><TT>str</TT></TD><TD>&nbsp;The string where the pipe is searched.</TD></TR>
+		</TABLE></CENTER><BR>
+		<B>Result: </B>A boolean set to true if a pipe is founded..<BR><BR>
+		<HR WIDTH="100%">
+		<A NAME="_getNextXpathName"></A>
+		<H3>_getNextXpathName</H3>
+		
+		<BLOCKQUOTE><PRE>string		<B>_getNextXpathName</B>(const char **str);</PRE></BLOCKQUOTE>
+		Used by XPath functions to get the next expression's token.<BR><BR>
+		<B>Parameters</B>
+		<CENTER><TABLE BORDER="1" WIDTH="80%%">
+			<TR><TD ALIGN="CENTER"><TT>A</TT></TD><TD>&nbsp;pointer to the string.</TD></TR>
+		</TABLE></CENTER><BR>
+		<B>Result: </B>A string which contains the token..<BR><BR>
+		<HR WIDTH="100%%">
+	</TD></TR></TABLE>
+</CENTER>
+</BODY>
+</HTML>

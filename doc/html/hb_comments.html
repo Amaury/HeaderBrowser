@@ -1,0 +1,169 @@
+<HTML>
+<HEAD>
+	<TITLE>HeaderBrowser - Documentation - HeaderBrowser Comments</TITLE>
+	<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+	<META NAME=AUTHOR CONTENT="Amaury Bouchard - amaury@amaury.net">
+	<META NAME=GENERATOR CONTENT="My hands">
+	<META NAME=DESCRIPTION CONTENT="Home site of the HeaderBrowser tool">
+	<META NAME=KEYWORDS CONTENT="programming, c, c++, header files, headerbrowser">
+	<STYLE TYPE="text/css">
+		DIV.para {
+			text-align: justify;
+		}
+		A.baseLink {
+			text-decoration: none;
+			color: blue;
+		}
+		A:hover.baseLink {
+			text-decoration: underline;
+			color: blue;
+		}
+		A:visited.baseLink {
+			text-decoration: none;
+			color: blue;
+        }
+		A:visited:hover.baseLink {
+			text-decoration: underline;
+			color: blue;
+        }
+		A.titleLink {
+			text-decoration: none;
+			color: blue;
+			font-family: Arial;
+		}
+		A:hover.titleLink {
+			text-decoration: underline;
+			color: blue;
+			font-family: Arial;
+		}
+		A:visited.titleLink {
+			text-decoration: none;
+			color: blue;
+			font-family: Arial;
+        }
+		A:visited:hover.titleLink {
+			text-decoration: underline;
+			color: blue;
+			font-family: Arial;
+        }
+		DIV.title {
+			color: black;
+			font-weight: bold;
+			font-family: sans-serif;
+		}
+	</STYLE>
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" TOPMARGIN="1" LEFTMARGIN="1" MARGINWIDTH="1" MARGINHEIGHT="1">
+	<CENTER>
+	<BR><BR>
+	<TABLE WIDTH="590" CELLSPACING="0" CELLPADDING="0" BORDER="0">
+		<TR><TD>
+			<DIV CLASS="para"><FONT size="+1" face="Arial"><B>
+				Header Browser's Documentation : HeaderBrowser Comments
+			</B></FONT></DIV>
+		</TD></TR>
+	</TABLE>
+	<BR>
+	<HR WIDTH="590" SIZE="1" NOSHADE="TRUE">
+	<BR>
+	<TABLE WIDTH="590" CELLSPACING="0" CELLPADDING="0" BORDER="0">
+		<TR><TD COLSPAN="3">
+			<DIV CLASS="title">General form of comments</DIV>
+			<DIV CLASS="para">
+				To show HeaderBrowser documentation informations, you have to write some comments in a particuliar form :
+<PRE>/*!
+ * @<I>type</I>              Name
+ * @abstract          Summarized documentation for this tag.
+ * @discussion        Full documentation for this tag.
+ * @<I>additional tag</I>    Value
+*/</PRE>
+				As you see, HeaderBrowser comments begins by "<CODE>/*!</CODE>", with an exclamation mark. For compatibility with JavaDoc, you also could use "<CODE>/**</CODE>".<BR>
+				There is some "tags", begining with an <I>arobase</I>. These tags indicates an HeaderBrowser API information. In a HeaderBrowser comment, the first tag is for the general API type (like function, class, typedef, ...).<P>
+
+				There is three tags that you could use in most of general HeaderBrowser tags :<BR>
+				<BLOCKQUOTE>
+					<CODE><B>@abstract</B></CODE>: used to put a brief guide of the API declaration. You also could use <CODE>@short</CODE> tag instead of <I>abstract</I>, it's the same (but you couldn't use the both at the same time).<P>
+
+					<CODE><B>@discussion</B></CODE>: it is for complete documentation. If an untagged text is finded after the API type and name declarations, it will be taken as a <I>discussion</I>.<P>
+
+					<CODE><B>@see</B></CODE>: used to refere to other related documentation. The <CODE>@ref</CODE> tag have exactly the same effect. You could put as <I>see</I> tags as you want, and they must be like the following forms.
+					<BLOCKQUOTE>
+						<CODE><U>@see symbol</U></CODE>
+							<BLOCKQUOTE>Refere to a symbol (function, struct, object, ...) in the same header file, and with the same type (i.e. if the <I>see</I> is used in a <I>function</I> declaration, it refere a function ; if it used in an <I>header</I> tag, it refere another header file, etc.).</BLOCKQUOTE>
+						<CODE><U>@see headerfile#</U></CODE>
+							<BLOCKQUOTE>Refere to another header file.</BLOCKQUOTE>
+						<CODE><U>@see headerfile#symbol</U></CODE>
+							<BLOCKQUOTE>Refere to a symbol of the same type in other header file.</BLOCKQUOTE>
+						<CODE><U>@see object::</U></CODE>
+							<BLOCKQUOTE>Refere to an object in the same header file.</BLOCKQUOTE>
+						<CODE><U>@see object::member</U></CODE>
+							<BLOCKQUOTE>Refere to a member (method or variable) of an object in the same header file.</BLOCKQUOTE>
+						<CODE><U>@see headerfile#object::</U></CODE>
+							<BLOCKQUOTE>Refere to an object in another header file.</BLOCKQUOTE>
+						<CODE><U>@see headerfile#object::member</U></CODE>
+							<BLOCKQUOTE>Refere to a member of an object in another header file.</BLOCKQUOTE>
+					</BLOCKQUOTE>
+				</BLOCKQUOTE>
+
+				So, you can create simple declarations:
+<PRE>/*! @var foo_global    Global variable */</PRE>
+				Or create multi-lines comments, with or without asterisks at the beginning of each lines:
+<PRE>/*!
+ * @function    foo_function
+ *              Here is the discussion, written on 2 lines,
+ *              without the discussion tag.
+ * @abstract    The summary.
+ @param         No asterisk on this line; it's still good.
+@param          Another fine-working example.
+*/</PRE>
+			</DIV>
+			<P>
+			<DIV CLASS="title">Tags for all headers file</DIV>
+			<DIV CLASS="para">
+				There is only one HeaderBrowser tag used for the whole header file. It is the <CODE>@header</CODE> tag (or the <CODE>@package</CODE>, it's the same but you couldn't have the both in the same file); it must be at most one time in the file. This tag takes only one field, which is the name of the header file (or the general functionality name) :
+<PRE>/*!
+ * @header      foo.h
+ * @abstract    All foo functions.
+ * @discussion  This file contains all declarations for
+ *              foo manipulation.
+*/</PRE>
+				You could write long <I>discussion</I> text, with example code. Inside an <CODE>@header</CODE> declaration, you could use other tags, to add more informations. These tags are : <CODE>@version</CODE>, <CODE>@author</CODE>, <CODE>@see</CODE>, and <CODE>@link</CODE>. Living aside the <I>version</I> tag, all of these tags could be used many times in the same <I>header</I> tag.<BR>
+
+				<BLOCKQUOTE>
+					<CODE><B>@version</B></CODE>: takes as argument a text which contains the version number of the file, and the date of creation/modification.<P>
+
+					<CODE><B>@author</B></CODE>: takes as argument the name and the eMail adress of the header/documentation author. You must type the name first, and after the eMail adresse, between '&lt;' and '&gt;' characters.<P>
+
+					<CODE><B>@link</B></CODE>: it is here to put hypertext links (in HTML output only). Like for the <I>author</I> tag, you must type the name of the link, and after the address between '&lt;' and '&gt;' characters.<P>
+				</BLOCKQUOTE>
+
+				See this example :
+<PRE>/*!
+ * @header      foo.h
+ * @abstract    All foo functions.
+ * @discussion  This file contains all declarations for
+ *              foo manipulation.
+ * @version     1.0.1 Dec 09 2001
+ * @author      yoda &lt;yoda@star.wars&gt;
+ * @see         foo2.h#
+ * @link        Starwars Web site &lt;http://www.starwars.com&gt;
+ * @ref         xwing::fly
+ * @link        Yoda's FTP &lt;ftp://ftp.yoda.wars&gt;
+ * @author      Bart &lt;bart@simpson.com&gt;
+*/</PRE>
+			</DIV>
+			<P>
+			<CENTER>
+				<A HREF="index.html" CLASS="baseLink">Previous Page : Introduction</A><BR>
+				<A HREF="c_tags.html" CLASS="baseLink">Next Page : C/C++ tags</A>
+			</CENTER>
+		</TD></TR>
+		<TR><TD COLSPAN="3"><BR><HR WIDTH="590" SIZE="1" NOSHADE></TD></TR>
+		<TR>
+			<TD WIDTH="280" ALIGN="RIGHT"><FONT SIZE="-2" face="Arial">Copyright &copy; 2000-2001</FONT></TD>
+			<TD WIDTH="30" ALIGN="CENTER"><FONT SIZE="-2" face="Arial">&nbsp;|&nbsp;</FONT></TD>
+			<TD WIDTH="280" ALIGN="LEFT"><FONT SIZE="-2" face="Arial"><A HREF="licence.html" CLASS="baseLink">Licence informations</A></FONT></TD>
+		</TR>
+	</TABLE>
+</BODY>
+</HTML>

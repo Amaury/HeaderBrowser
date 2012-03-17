@@ -1,0 +1,25 @@
+HeaderBrowser Installation
+==========================
+
+  1. `cd' to the directory containing the package's source code and type
+     `./configure' to configure the package for your system.  If you're
+     using `csh' on an old version of System V, you might need to type
+     `sh ./configure' instead to prevent `csh' from trying to execute
+     `configure' itself.
+     By default, the program executable binaryand is configured to be
+     installed in the `bin/' directory under `/usr/local/'.
+     If you want to install it somewhere else (in `/usr/bin/' for example),
+     you should use the `--prefix=PATH' option (so, for this example, you
+     should type `./configure --prefix=/usr').
+
+  2. Type `make' to compile the package.
+
+  3. Type `make install' to install the programs and any data files and
+     documentation. You must be the super-user to do it.
+
+  4. You can remove the program binaries and object files from the
+     source code directory by typing `make clean'.  
+
+  5. The executable file named `headerbrowser' could be finded in the
+     `bin' directory, and in the choosen directory if you have done the
+     `make install' command (`/usr/local/bin/' by default).

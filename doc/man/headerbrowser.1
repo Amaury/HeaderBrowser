@@ -1,0 +1,96 @@
+.ds PX \s-1POSIX\s+1
+.ds UX \s-1UNIX\s+1
+.ds AN \s-1ANSI\s+1
+.ds GN \s-1GNU\s+1
+.ds AK \s-1HEADERBROWSER\s+1
+.TH HEADERBROWSER 1 "May 09 2001" "headerbrowser.org" "Utility Commands"
+.SH NAME
+headerbrowser \- Create documentation from C/C++ headers.
+.SH SYNOPSIS
+.B headerbrowser
+[ 
+.B \-o
+.I output-path ]
+[ 
+.B \-t
+.I type ]
+[ 
+.B \-l
+.I language ]
+ files .\|.\|.
+.SH DESCRIPTION
+.I HeaderBrowser
+is a simple and efficient tool for creating documentation from C/C++ source code. 
+It is an open source project, running on most of Unix-like OS.
+.PP
+You could use this program to process previously created source headers and create
+documentations.
+.SH OPTIONS
+.PP
+.I HeaderBrowser
+accepts the following options.
+.TP
+.PD 0
+.BI \-o " output-path"
+Create the documentation files in the
+.I output-path
+directory.
+.TP
+.PD 0
+.BI \-t " type"
+Use the
+.IR type
+conversion process. It could be :
+.br
+h2h: header to HTML
+.br
+h2x: header to XHB (XML format used in HeaderBrowser)
+.br
+x2h: XHB to HTML
+.br
+The default conversion is "h2h".
+.TP
+.PD 0
+.BI \-l " language"
+Use the
+.IT language
+specification. It could be :
+.br
+eng : english
+.br
+fr : french
+.PD
+.SH VERSION INFORMATION
+This man page documents
+.IR HeaderBrowser ,
+version 0.8.0.
+.SH AUTHORS
+.I HeaderBrowser
+was completely designed and implemented by Amaury Bouchard (amaury@amaury.net).
+.SH BUG REPORTS
+If you find a bug in
+.IR HeaderBrowser ,
+please send electronic mail to
+.BR contact@headerbrowser.org .
+.SH COPYING PERMISSIONS
+Copyright \(co 2001 Amaury Bouchard
+.PP
+Permission is granted to make and distribute verbatim copies of
+this manual page provided the copyright notice and this permission
+notice are preserved on all copies.
+.ig
+Permission is granted to process this file through troff and print the
+results, provided the printed document carries copying permission
+notice identical to this one except for the removal of this paragraph
+(this paragraph not being relevant to the printed manual page).
+..
+.PP
+Permission is granted to copy and distribute modified versions of this
+manual page under the conditions for verbatim copying, provided that
+the entire resulting derived work is distributed under the terms of a
+permission notice identical to this one.
+.PP
+Permission is granted to copy and distribute translations of this
+manual page into another language, under the above conditions for
+modified versions, except that this permission notice may be stated in
+a translation approved by the Foundation.

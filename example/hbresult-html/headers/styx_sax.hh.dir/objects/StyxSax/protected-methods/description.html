@@ -1,0 +1,93 @@
+<HTML>
+<BODY BGCOLOR="#FFFFFF">
+<FONT SIZE="-1">/&nbsp;styx_sax.hh&nbsp;/&nbsp;Objects&nbsp;/&nbsp;StyxSax&nbsp;/&nbsp;Protected Methods&nbsp;/&nbsp;Description</FONT>
+<CENTER>
+	<H1>Protected Methods</H1>
+	<BR>
+	<TABLE WIDTH="80%"><TR><TD>		<HR WIDTH="100%">
+		<A NAME="setStatus"></A>
+		<H3>setStatus</H3>
+		
+		<BLOCKQUOTE><PRE>void		<B>setStatus</B>(StyxSaxStatus newStatus);</PRE></BLOCKQUOTE>
+		Change the current parser status.<BR><BR>
+		<B>Parameters</B>
+		<CENTER><TABLE BORDER="1" WIDTH="80%%">
+			<TR><TD ALIGN="CENTER"><TT>newStatus</TT></TD><TD>&nbsp;The new value of parser status.</TD></TR>
+		</TABLE></CENTER><BR>
+		<HR WIDTH="100%">
+		<A NAME="openTagHandler"></A>
+		<H3>openTagHandler</H3>
+		
+		<BLOCKQUOTE><PRE>virtual void	<B>openTagHandler</B>(string name, vector<StyxSaxAttr*> attrs);</PRE></BLOCKQUOTE>
+		Method called when an XML open tag is founded.<BR><BR>
+		<B>Parameters</B>
+		<CENTER><TABLE BORDER="1" WIDTH="80%%">
+			<TR><TD ALIGN="CENTER"><TT>name</TT></TD><TD>&nbsp;Name of the tag.</TD></TR>
+			<TR><TD ALIGN="CENTER"><TT>attrs</TT></TD><TD>&nbsp;All attributes of the tag.</TD></TR>
+		</TABLE></CENTER><BR>
+		<HR WIDTH="100%">
+		<A NAME="insideTextHandler"></A>
+		<H3>insideTextHandler</H3>
+		
+		<BLOCKQUOTE><PRE>virtual void	<B>insideTextHandler</B>(char c);</PRE></BLOCKQUOTE>
+		Method called when a text character is founded between an opening and a closing tag.<BR><BR>
+		<B>Parameters</B>
+		<CENTER><TABLE BORDER="1" WIDTH="80%%">
+			<TR><TD ALIGN="CENTER"><TT>c</TT></TD><TD>&nbsp;The caracter founded.</TD></TR>
+		</TABLE></CENTER><BR>
+		<HR WIDTH="100%">
+		<A NAME="closeTagHandler"></A>
+		<H3>closeTagHandler</H3>
+		
+		<BLOCKQUOTE><PRE>virtual void	<B>closeTagHandler</B>(string name);</PRE></BLOCKQUOTE>
+		Method called when an XML close tag is founded.<BR><BR>
+		<B>Parameters</B>
+		<CENTER><TABLE BORDER="1" WIDTH="80%%">
+			<TR><TD ALIGN="CENTER"><TT>name</TT></TD><TD>&nbsp;Name of the tag.</TD></TR>
+		</TABLE></CENTER><BR>
+		<HR WIDTH="100%">
+		<A NAME="commentHandler"></A>
+		<H3>commentHandler</H3>
+		
+		<BLOCKQUOTE><PRE>virtual void	<B>commentHandler</B>(string content);</PRE></BLOCKQUOTE>
+		Method called when an XML comment is founded in the WML file.<BR><BR>
+		<B>Parameters</B>
+		<CENTER><TABLE BORDER="1" WIDTH="80%%">
+			<TR><TD ALIGN="CENTER"><TT>content</TT></TD><TD>&nbsp;The character string of the comment.</TD></TR>
+		</TABLE></CENTER><BR>
+		<HR WIDTH="100%">
+		<A NAME="processingInstructionHandler"></A>
+		<H3>processingInstructionHandler</H3>
+		
+		<BLOCKQUOTE><PRE>virtual void	<B>processingInstructionHandler</B>(string target, string content);</PRE></BLOCKQUOTE>
+		Method called when an XML processing instruction is founded.<BR><BR>
+		<B>Parameters</B>
+		<CENTER><TABLE BORDER="1" WIDTH="80%%">
+			<TR><TD ALIGN="CENTER"><TT>target</TT></TD><TD>&nbsp;Name of the processing instruction's target.</TD></TR>
+			<TR><TD ALIGN="CENTER"><TT>content</TT></TD><TD>&nbsp;Character string of the instruction.</TD></TR>
+		</TABLE></CENTER><BR>
+		<HR WIDTH="100%">
+		<A NAME="cdataHandler"></A>
+		<H3>cdataHandler</H3>
+		
+		<BLOCKQUOTE><PRE>virtual void	<B>cdataHandler</B>(string content);</PRE></BLOCKQUOTE>
+		Method called when a CDATA tag is founded.<BR><BR>
+		<B>Parameters</B>
+		<CENTER><TABLE BORDER="1" WIDTH="80%%">
+			<TR><TD ALIGN="CENTER"><TT>content</TT></TD><TD>&nbsp;Character string of the tag.</TD></TR>
+		</TABLE></CENTER><BR>
+		<HR WIDTH="100%">
+		<A NAME="errorHandler"></A>
+		<H3>errorHandler</H3>
+		
+		<BLOCKQUOTE><PRE>virtual void	<B>errorHandler</B>(int line);</PRE></BLOCKQUOTE>
+		Method called when a parsing error appears.<BR><BR>
+		<B>Parameters</B>
+		<CENTER><TABLE BORDER="1" WIDTH="80%%">
+			<TR><TD ALIGN="CENTER"><TT>line</TT></TD><TD>&nbsp;Line number in th XML file where error happens.</TD></TR>
+		</TABLE></CENTER><BR>
+		<HR WIDTH="100%%">
+	</TD></TR></TABLE>
+</CENTER>
+</BODY>
+</HTML>

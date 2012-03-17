@@ -1,0 +1,112 @@
+<HTML>
+<HEAD>
+	<TITLE>HeaderBrowser - Documentation - C++ specific tags</TITLE>
+	<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+	<META NAME=AUTHOR CONTENT="Amaury Bouchard - amaury@amaury.net">
+	<META NAME=GENERATOR CONTENT="My hands">
+	<META NAME=DESCRIPTION CONTENT="Home site of the HeaderBrowser tool">
+	<META NAME=KEYWORDS CONTENT="programming, c, c++, header files, headerbrowser">
+	<STYLE TYPE="text/css">
+		DIV.para {
+			text-align: justify;
+		}
+		A.baseLink {
+			text-decoration: none;
+			color: blue;
+		}
+		A:hover.baseLink {
+			text-decoration: underline;
+			color: blue;
+		}
+		A:visited.baseLink {
+			text-decoration: none;
+			color: blue;
+        }
+		A:visited:hover.baseLink {
+			text-decoration: underline;
+			color: blue;
+        }
+		A.titleLink {
+			text-decoration: none;
+			color: blue;
+			font-family: Arial;
+		}
+		A:hover.titleLink {
+			text-decoration: underline;
+			color: blue;
+			font-family: Arial;
+		}
+		A:visited.titleLink {
+			text-decoration: none;
+			color: blue;
+			font-family: Arial;
+        }
+		A:visited:hover.titleLink {
+			text-decoration: underline;
+			color: blue;
+			font-family: Arial;
+        }
+		DIV.title {
+			color: black;
+			font-weight: bold;
+			font-family: sans-serif;
+		}
+	</STYLE>
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" TOPMARGIN="1" LEFTMARGIN="1" MARGINWIDTH="1" MARGINHEIGHT="1">
+	<CENTER>
+	<BR><BR>
+	<TABLE WIDTH="590" CELLSPACING="0" CELLPADDING="0" BORDER="0">
+		<TR><TD>
+			<DIV CLASS="para"><FONT size="+1" face="Arial"><B>
+				Header Browser's Documentation : C++ specific tags
+			</B></FONT></DIV>
+		</TD></TR>
+	</TABLE>
+	<BR>
+	<HR WIDTH="590" SIZE="1" NOSHADE="TRUE">
+	<BR>
+	<TABLE WIDTH="590" CELLSPACING="0" CELLPADDING="0" BORDER="0">
+		<TR><TD COLSPAN="3">
+			<DIV CLASS="title">@class</DIV>
+			<DIV CLASS="para">
+				The <CODE>@class</CODE> tag is used to put documentation for objects. There is no sub-tag, but you could (in fact, if you want to do a good documentation of your object, you must) put documentations inside of the object dclaration.
+<PRE>/*!
+ * @class       XWing
+ * @abstract    One of the best space interceptor.
+ * @discussion  The mythic spaceship used by the
+ *              Rebellion against the Empire.
+*/
+class   XWing : public SpaceShip
+{
+public:
+    /*! @var r2d2  Droid for mechanical help */
+    mechanicDroid      *r2d2;
+    /*!
+     * @function   go
+     *             Launch the ship to do its mission.
+     * @param      urgency    Level of urgency of the mission.
+     * @result     Boolean value that indicate the result
+     *             status of the mission.
+    */
+    bool               go(int urgency);
+private:
+    /* @var mission  The current mission */
+    void               *mission;
+};</PRE>
+			</DIV>
+			<P>
+			<CENTER>
+				<A HREF="c_tags.html" CLASS="baseLink">Previous Page : C/C++ tags</A><BR>
+				<A HREF="all_tags.html" CLASS="baseLink">Next Page : All tags recapitulation</A>
+			</CENTER>
+		</TD></TR>
+		<TR><TD COLSPAN="3"><BR><HR WIDTH="590" SIZE="1" NOSHADE></TD></TR>
+		<TR>
+			<TD WIDTH="280" ALIGN="RIGHT"><FONT SIZE="-2" face="Arial">Copyright &copy; 2000-2001</FONT></TD>
+			<TD WIDTH="30" ALIGN="CENTER"><FONT SIZE="-2" face="Arial">&nbsp;|&nbsp;</FONT></TD>
+			<TD WIDTH="280" ALIGN="LEFT"><FONT SIZE="-2" face="Arial"><A HREF="licence.html" CLASS="baseLink">Licence informations</A></FONT></TD>
+		</TR>
+	</TABLE>
+</BODY>
+</HTML>

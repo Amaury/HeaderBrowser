@@ -1,0 +1,32 @@
+<HTML>
+<BODY BGCOLOR="#FFFFFF">
+<FONT SIZE="-1">/&nbsp;styx_sax.hh&nbsp;/&nbsp;Type definitions&nbsp;/&nbsp;Description</FONT>
+<CENTER>
+	<H1>Type definitions</H1>
+	<BR>
+	<TABLE WIDTH="80%"><TR><TD>		<HR WIDTH="100%">
+		<A NAME="StyxSaxStatus"></A>
+		<H3>StyxSaxStatus</H3>
+		
+		<BLOCKQUOTE><PRE>typedef enum	<B>StyxSaxStatus</B>_e
+{
+  SAX_STATUS_NONE = 0,
+  SAX_STATUS_OK,
+  SAX_STATUS_STOPPED,
+  SAX_STATUS_NO_FILE,
+  SAX_STATUS_ERR_PARSE
+}		StyxSaxStatus;</PRE></BLOCKQUOTE>
+		Defined type for constants used as parser's status indicator.<BR><BR>
+		<B>Constants</B>
+		<CENTER><TABLE BORDER="1" WIDTH="80%%">
+			<TR><TD ALIGN="CENTER"><TT>SAX_STATUS_NONE</TT></TD><TD>&nbsp;No status set yet.</TD></TR>
+			<TR><TD ALIGN="CENTER"><TT>SAX_STATUS_OK</TT></TD><TD>&nbsp;No parse error.</TD></TR>
+			<TR><TD ALIGN="CENTER"><TT>SAX_STATUS_STOPPED</TT></TD><TD>&nbsp;Parser stopped by user.</TD></TR>
+			<TR><TD ALIGN="CENTER"><TT>SAX_STATUS_NO_FILE</TT></TD><TD>&nbsp;The parser couldn't read the specified file.</TD></TR>
+			<TR><TD ALIGN="CENTER"><TT>SAX_STATUS_ERR_PARSE</TT></TD><TD>&nbsp;Parsing error.</TD></TR>
+		</TABLE></CENTER><BR>
+		<HR WIDTH="100%%">
+	</TD></TR></TABLE>
+</CENTER>
+</BODY>
+</HTML>

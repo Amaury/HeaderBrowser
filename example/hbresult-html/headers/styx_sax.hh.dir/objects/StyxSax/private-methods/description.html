@@ -1,0 +1,64 @@
+<HTML>
+<BODY BGCOLOR="#FFFFFF">
+<FONT SIZE="-1">/&nbsp;styx_sax.hh&nbsp;/&nbsp;Objects&nbsp;/&nbsp;StyxSax&nbsp;/&nbsp;Private Methods&nbsp;/&nbsp;Description</FONT>
+<CENTER>
+	<H1>Private Methods</H1>
+	<BR>
+	<TABLE WIDTH="80%"><TR><TD>		<HR WIDTH="100%">
+		<A NAME="getChar"></A>
+		<H3>getChar</H3>
+		
+		<BLOCKQUOTE><PRE>char		<B>getChar</B>(void);</PRE></BLOCKQUOTE>
+		Used to get the next character of parsed file.<BR><BR>
+		<B>Result: </B>The next character..<BR><BR>
+		<HR WIDTH="100%">
+		<A NAME="ungetChar"></A>
+		<H3>ungetChar</H3>
+		
+		<BLOCKQUOTE><PRE>void		<B>ungetChar</B>(char c);</PRE></BLOCKQUOTE>
+		Used to put back a character in the XML file stream.<BR><BR>
+		<B>Parameters</B>
+		<CENTER><TABLE BORDER="1" WIDTH="80%%">
+			<TR><TD ALIGN="CENTER"><TT>c</TT></TD><TD>&nbsp;The character to put back.</TD></TR>
+		</TABLE></CENTER><BR>
+		<HR WIDTH="100%">
+		<A NAME="doOpenTag"></A>
+		<H3>doOpenTag</H3>
+		
+		<BLOCKQUOTE><PRE>void		<B>doOpenTag</B>(void);</PRE></BLOCKQUOTE>
+		Internal function used to parse the XML file when a '<' is founded. Call the sub-parse functions.<BR><BR>
+		<HR WIDTH="100%">
+		<A NAME="parseOpenTag"></A>
+		<H3>parseOpenTag</H3>
+		
+		<BLOCKQUOTE><PRE>void		<B>parseOpenTag</B>(void);</PRE></BLOCKQUOTE>
+		Internal function used to parse open tags.<BR><BR>
+		<HR WIDTH="100%">
+		<A NAME="parseCloseTag"></A>
+		<H3>parseCloseTag</H3>
+		
+		<BLOCKQUOTE><PRE>void		<B>parseCloseTag</B>(void);</PRE></BLOCKQUOTE>
+		Internal function used to parse close tags.<BR><BR>
+		<HR WIDTH="100%">
+		<A NAME="parseProcessingInstruction"></A>
+		<H3>parseProcessingInstruction</H3>
+		
+		<BLOCKQUOTE><PRE>void		<B>parseProcessingInstruction</B>(void);</PRE></BLOCKQUOTE>
+		Internal function used to parse processing instructions.<BR><BR>
+		<HR WIDTH="100%">
+		<A NAME="parseComment"></A>
+		<H3>parseComment</H3>
+		
+		<BLOCKQUOTE><PRE>void		<B>parseComment</B>(void);</PRE></BLOCKQUOTE>
+		Internal function used to parse XML comments.<BR><BR>
+		<HR WIDTH="100%">
+		<A NAME="parseCdata"></A>
+		<H3>parseCdata</H3>
+		
+		<BLOCKQUOTE><PRE>void		<B>parseCdata</B>(void);</PRE></BLOCKQUOTE>
+		Internal function used to parse CDATA tags.<BR><BR>
+		<HR WIDTH="100%%">
+	</TD></TR></TABLE>
+</CENTER>
+</BODY>
+</HTML>

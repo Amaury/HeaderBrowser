@@ -1,0 +1,20 @@
+prefix = @prefix@
+bindir = $(prefix)/bin
+mandir = $(prefix)/man/man1
+
+default:
+	cd lib; make
+	cd src; make
+	mkdir bin
+	mv src/headerbrowser bin/
+
+clean:
+	cd lib; make clean
+	cd src; make clean
+	rm -rf bin/
+
+all: clean default
+
+install:
+	cp bin/headerbrowser $(bindir)
+	if [ -d $(mandir) ]; then cp doc/man/* $(mandir); fi

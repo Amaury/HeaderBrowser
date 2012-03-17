@@ -1,0 +1,102 @@
+<HTML>
+<BODY BGCOLOR="#FFFFFF">
+<FONT SIZE="-1">/&nbsp;styx_dom.hh&nbsp;/&nbsp;Objects&nbsp;/&nbsp;StyxDom&nbsp;/&nbsp;Public Methods&nbsp;/&nbsp;Description</FONT>
+<CENTER>
+	<H1>Public Methods</H1>
+	<BR>
+	<TABLE WIDTH="80%"><TR><TD>		<HR WIDTH="100%">
+		<A NAME="readFile"></A>
+		<H3>readFile</H3>
+		
+		<BLOCKQUOTE><PRE>bool			<B>readFile</B>(char* filename);</PRE></BLOCKQUOTE>
+		Do parsing of the given file.<BR><BR>
+		<B>Parameters</B>
+		<CENTER><TABLE BORDER="1" WIDTH="80%%">
+			<TR><TD ALIGN="CENTER"><TT>filename</TT></TD><TD>&nbsp;Name of the XML file to parse.</TD></TR>
+		</TABLE></CENTER><BR>
+		<B>Result: </B>A boolean set to true if the parsing was done without error..<BR><BR>
+		<HR WIDTH="100%">
+		<A NAME="writeDom"></A>
+		<H3>writeDom</H3>
+		
+		<BLOCKQUOTE><PRE>bool			<B>writeDom</B>(FILE* file);</PRE></BLOCKQUOTE>
+		Write down a copy of the XML tree to the stream given.<BR><BR>
+		<B>Parameters</B>
+		<CENTER><TABLE BORDER="1" WIDTH="80%%">
+			<TR><TD ALIGN="CENTER"><TT>file</TT></TD><TD>&nbsp;Stream were the XML will be written.</TD></TR>
+		</TABLE></CENTER><BR>
+		<B>Result: </B>A boolean set to true if no error occurs..<BR><BR>
+		<HR WIDTH="100%">
+		<A NAME="addNode"></A>
+		<H3>addNode</H3>
+		
+		<BLOCKQUOTE><PRE>void			<B>addNode</B>(StyxDomNode* node);</PRE></BLOCKQUOTE>
+		Add an XML node at the top level of the DOM document.<BR><BR>
+		<B>Parameters</B>
+		<CENTER><TABLE BORDER="1" WIDTH="80%%">
+			<TR><TD ALIGN="CENTER"><TT>node</TT></TD><TD>&nbsp;A pointer to a StyxDomNode previously created.</TD></TR>
+		</TABLE></CENTER><BR>
+		<HR WIDTH="100%">
+		<A NAME="getFromXpath"></A>
+		<H3>getFromXpath</H3>
+		
+		<BLOCKQUOTE><PRE>vector<StyxDomNode*>	<B>getFromXpath</B>(string path);</PRE></BLOCKQUOTE>
+		Search nodes in the DOM representation matching a given XPath expression.<BR><BR>
+		<B>Parameters</B>
+		<CENTER><TABLE BORDER="1" WIDTH="80%%">
+			<TR><TD ALIGN="CENTER"><TT>path</TT></TD><TD>&nbsp;The XPath expression.</TD></TR>
+		</TABLE></CENTER><BR>
+		<B>Result: </B>An array of pointers to the matching nodes..<BR><BR>
+		<HR WIDTH="100%">
+		<A NAME="getNodesFromXpath"></A>
+		<H3>getNodesFromXpath</H3>
+		
+		<BLOCKQUOTE><PRE>vector<StyxDomNode*>	<B>getNodesFromXpath</B>(vector<StyxDomNode*> l, string path);</PRE></BLOCKQUOTE>
+		Process an XPath expression with a set of nodes.<BR><BR>
+		<B>Parameters</B>
+		<CENTER><TABLE BORDER="1" WIDTH="80%%">
+			<TR><TD ALIGN="CENTER"><TT>l</TT></TD><TD>&nbsp;The set of nodes used to process the XPath expression.</TD></TR>
+			<TR><TD ALIGN="CENTER"><TT>path</TT></TD><TD>&nbsp;The XPath expression.</TD></TR>
+		</TABLE></CENTER><BR>
+		<B>Result: </B>An array of pointers to StyxDomNode..<BR><BR>
+		<HR WIDTH="100%">
+		<A NAME="StyxDom"></A>
+		<H3>StyxDom</H3>
+		
+		<BLOCKQUOTE><PRE><B>StyxDom</B>(void)</PRE></BLOCKQUOTE>
+		Constructor<BR><BR>
+		<HR WIDTH="100%">
+		<A NAME="~StyxDom"></A>
+		<H3>~StyxDom</H3>
+		
+		<BLOCKQUOTE><PRE><B>~StyxDom</B>(void)</PRE></BLOCKQUOTE>
+		Destructor<BR><BR>
+		<HR WIDTH="100%">
+		<A NAME="_rm_equals"></A>
+		<H3>_rm_equals</H3>
+		
+		<BLOCKQUOTE><PRE>static vector<StyxDomNode*>	<B>_rm_equals</B>(vector<StyxDomNode*> l);</PRE></BLOCKQUOTE>
+		Create a new array of pointers to StyxDomNode, by copying an existing one, without the double elements.<BR><BR>
+		<B>Parameters</B>
+		<CENTER><TABLE BORDER="1" WIDTH="80%%">
+			<TR><TD ALIGN="CENTER"><TT>l</TT></TD><TD>&nbsp;The inital array.</TD></TR>
+		</TABLE></CENTER><BR>
+		<B>Result: </B>The resulting array..<BR><BR>
+		<HR WIDTH="100%">
+		<A NAME="_merge_vectors"></A>
+		<H3>_merge_vectors</H3>
+		
+		<BLOCKQUOTE><PRE>static vector<StyxDomNode*>	<B>_merge_vectors</B>(vector<StyxDomNode*> v1,
+				       vector<StyxDomNode*> v2);</PRE></BLOCKQUOTE>
+		Create a new array of pointers to StyxDomNode, by merging two existing ones.<BR><BR>
+		<B>Parameters</B>
+		<CENTER><TABLE BORDER="1" WIDTH="80%%">
+			<TR><TD ALIGN="CENTER"><TT>v1</TT></TD><TD>&nbsp;The first array.</TD></TR>
+			<TR><TD ALIGN="CENTER"><TT>v2</TT></TD><TD>&nbsp;The second array.</TD></TR>
+		</TABLE></CENTER><BR>
+		<B>Result: </B>The resulting array..<BR><BR>
+		<HR WIDTH="100%%">
+	</TD></TR></TABLE>
+</CENTER>
+</BODY>
+</HTML>

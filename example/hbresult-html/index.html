@@ -1,0 +1,46 @@
+<HTML>
+<HEAD>
+<title> Header Browser </title>
+<SCRIPT>
+	function go(redirect) {
+		content.document.location.href = redirect;
+	}
+	function clear(col) {
+		if (col == 1)
+			col1.document.location.href = "void.html";
+		else if (col == 2)
+			col2.document.location.href = "void.html";
+		else if (col == 3)
+			col3.document.location.href = "void.html";
+		else if (col == 4)
+			col4.document.location.href = "void.html";
+		else if (col == 5)
+			col5.document.location.href = "void.html";
+		else if (col == -1) {
+			col2.document.location.href = "void.html";
+			col3.document.location.href = "void.html";
+			col4.document.location.href = "void.html";
+			col5.document.location.href = "void.html";
+		} else if (col == -2) {
+			col3.document.location.href = "void.html";
+			col4.document.location.href = "void.html";
+			col5.document.location.href = "void.html";
+		} else if (col == -3) {
+			col4.document.location.href = "void.html";
+			col5.document.location.href = "void.html";
+		} else if (col == -4)
+			col5.document.location.href = "void.html";
+	}
+</SCRIPT>
+</HEAD>
+<FRAMESET ROWS="30%%,*">
+	<FRAMESET COLS="20%%,20%%,20%%,20%%,20%%">
+		<FRAME SRC="headers/index.html" NAME="col1" border>
+		<FRAME SRC="void.html" NAME="col2" border>
+		<FRAME SRC="void.html" NAME="col3" border>
+		<FRAME SRC="void.html" NAME="col4" border>
+		<FRAME SRC="void.html" NAME="col5" border>
+	</FRAMESET>
+	<FRAME SRC="description.html" NAME="content">
+</FRAMESET>
+</HTML>

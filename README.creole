@@ -1,0 +1,12 @@
+=HeaderBrowser=
+You can use HeaderBrowser to generate documentation from C/C++ header files.
+
+* See INSTALL file for installation instruction.
+* See COPYING file for license information (GPL v2).
+ 
+You could find the documentation in the 'doc' directory of the current
+archive. There is a full HTML documentation in the 'html' sub-directory,
+and a man page in the 'man' sub-directory. If you have done a 'make
+install', the man page is normally installed.
+
+Go to http://www.headerbrowser.org to get more news, documentation, ...

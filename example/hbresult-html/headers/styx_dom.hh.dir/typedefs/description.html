@@ -1,0 +1,48 @@
+<HTML>
+<BODY BGCOLOR="#FFFFFF">
+<FONT SIZE="-1">/&nbsp;styx_dom.hh&nbsp;/&nbsp;Type definitions&nbsp;/&nbsp;Description</FONT>
+<CENTER>
+	<H1>Type definitions</H1>
+	<BR>
+	<TABLE WIDTH="80%"><TR><TD>		<HR WIDTH="100%">
+		<A NAME="DomNodeType"></A>
+		<H3>DomNodeType</H3>
+		
+		<BLOCKQUOTE><PRE>typedef enum	<B>DomNodeType</B>_e
+{
+  VOID_NODE = 0,
+  ELEMENT_NODE,
+  ATTRIBUTE_NODE,
+  TEXT_NODE,
+  CDATA_SECTION_NODE,
+  ENTITY_REFERENCE_NODE,
+  ENTITY_NODE,
+  PROCESSING_INSTRUCTION_NODE,
+  COMMENT_NODE,
+  DOCUMENT_NODE,
+  DOCUMENT_TYPE_NODE,
+  DOCUMENT_FRAGMENT_NODE,
+  NOTATION_NODE
+}		DomNodeType;</PRE></BLOCKQUOTE>
+		Defined type for constant used as DOM nodes type.<BR><BR>
+		<B>Constants</B>
+		<CENTER><TABLE BORDER="1" WIDTH="80%%">
+			<TR><TD ALIGN="CENTER"><TT>VOID_NODE</TT></TD><TD>&nbsp;No node type set yet.</TD></TR>
+			<TR><TD ALIGN="CENTER"><TT>ELEMENT_NODE</TT></TD><TD>&nbsp;Traditionnal XML tag.</TD></TR>
+			<TR><TD ALIGN="CENTER"><TT>ATTRIBUTE_NODE</TT></TD><TD>&nbsp;Attribute node of an existing tag.</TD></TR>
+			<TR><TD ALIGN="CENTER"><TT>TEXT_NODE</TT></TD><TD>&nbsp;Explicit or implicit node of text inside an XML tag.</TD></TR>
+			<TR><TD ALIGN="CENTER"><TT>CDATA_SECTION_NODE</TT></TD><TD>&nbsp;CDATA tag.</TD></TR>
+			<TR><TD ALIGN="CENTER"><TT>ENTITY_REFERENCE_NODE</TT></TD><TD>&nbsp;Node of entity reference. Not used.</TD></TR>
+			<TR><TD ALIGN="CENTER"><TT>ENTITY_NODE</TT></TD><TD>&nbsp;Node of entity. Not used.</TD></TR>
+			<TR><TD ALIGN="CENTER"><TT>PROCESSING_INSTRUCTION_NODE</TT></TD><TD>&nbsp;Node of processing instruction.</TD></TR>
+			<TR><TD ALIGN="CENTER"><TT>COMMENT_NODE</TT></TD><TD>&nbsp;XML comment node.</TD></TR>
+			<TR><TD ALIGN="CENTER"><TT>DOCUMENT_NODE</TT></TD><TD>&nbsp;Root XML document.</TD></TR>
+			<TR><TD ALIGN="CENTER"><TT>DOCUMENT_TYPE_NODE</TT></TD><TD>&nbsp;Node of document type. Not used.</TD></TR>
+			<TR><TD ALIGN="CENTER"><TT>DOCUMENT_FRAGMENT_NODE</TT></TD><TD>&nbsp;Node of document fragment. Not used.</TD></TR>
+			<TR><TD ALIGN="CENTER"><TT>NOTATION_NODE</TT></TD><TD>&nbsp;Node for notations. Not used.</TD></TR>
+		</TABLE></CENTER><BR>
+		<HR WIDTH="100%%">
+	</TD></TR></TABLE>
+</CENTER>
+</BODY>
+</HTML>

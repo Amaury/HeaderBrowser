@@ -1,0 +1,104 @@
+<HTML>
+<BODY BGCOLOR="#FFFFFF">
+<FONT SIZE="-1">/&nbsp;styx_sax.hh&nbsp;/&nbsp;Content</FONT>
+<PRE>
+#ifndef   __STYX_SAX_H__
+#define   __STYX_SAX_H__
+
+#include <string>
+#include <vector>
+#include <iostream>
+#include <stdio.h>
+#include "styx.hh"
+
+
+#define	SAX_ERR_RETURN	{setStatus(SAX_STATUS_ERR_PARSE);
+			errorHandler(line); return ;}
+
+
+typedef enum	StyxSaxStatus_e
+{
+  SAX_STATUS_NONE = 0,
+  SAX_STATUS_OK,
+  SAX_STATUS_STOPPED,
+  SAX_STATUS_NO_FILE,
+  SAX_STATUS_ERR_PARSE
+}		StyxSaxStatus;
+
+
+class		StyxSaxAttr
+{
+public:
+  
+  string	getName(void);
+  
+  string	getValue(void);
+  
+  StyxSaxAttr(string name, string value);
+private:
+  
+  string	name;
+  
+  string	value;
+};
+
+
+class		StyxSax
+{
+public:
+  
+  StyxSaxStatus	saxParse(char* filename);
+  
+  void		saxStop(void);
+  
+  StyxSax(void);
+  
+  virtual ~StyxSax(void);
+protected:
+  
+  void		setStatus(StyxSaxStatus newStatus);
+  
+  virtual void	openTagHandler(string name, vector<StyxSaxAttr*> attrs);
+  
+  virtual void	insideTextHandler(char c);
+  
+  virtual void	closeTagHandler(string name);
+  
+  virtual void	commentHandler(string content);
+  
+  virtual void	processingInstructionHandler(string target, string content);
+  
+  virtual void	cdataHandler(string content);
+  
+  virtual void	errorHandler(int line);
+private:
+  
+  FILE*		file;
+  
+  StyxSaxStatus	saxStatus;
+  
+  int		line;
+  
+  int		charac;
+  
+  char		getChar(void);
+  
+  void		ungetChar(char c);
+  
+  void		doOpenTag(void);
+  
+  void		parseOpenTag(void);
+  
+  void		parseCloseTag(void);
+  
+  void		parseProcessingInstruction(void);
+  
+  void		parseComment(void);
+  
+  void		parseCdata(void);
+};
+
+#endif /* __STYX_SAX_H__ */
+</PRE>
+</BODY>
+</HTML>

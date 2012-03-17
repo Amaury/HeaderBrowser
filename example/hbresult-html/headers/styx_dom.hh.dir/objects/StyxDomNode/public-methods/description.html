@@ -1,0 +1,231 @@
+<HTML>
+<BODY BGCOLOR="#FFFFFF">
+<FONT SIZE="-1">/&nbsp;styx_dom.hh&nbsp;/&nbsp;Objects&nbsp;/&nbsp;StyxDomNode&nbsp;/&nbsp;Public Methods&nbsp;/&nbsp;Description</FONT>
+<CENTER>
+	<H1>Public Methods</H1>
+	<BR>
+	<TABLE WIDTH="80%"><TR><TD>		<HR WIDTH="100%">
+		<A NAME="getRoot"></A>
+		<H3>getRoot</H3>
+		
+		<BLOCKQUOTE><PRE>StyxDomNode*		<B>getRoot</B>(void);</PRE></BLOCKQUOTE>
+		Return the older grand-parent node of this node.<BR><BR>
+		<B>Result: </B>A pointer to a StyxDomNode..<BR><BR>
+		<HR WIDTH="100%">
+		<A NAME="getParent"></A>
+		<H3>getParent</H3>
+		
+		<BLOCKQUOTE><PRE>StyxDomNode*		<B>getParent</B>(void);</PRE></BLOCKQUOTE>
+		Return the closer parent of this node.<BR><BR>
+		<B>Result: </B>A pointer to a StyxDomNode..<BR><BR>
+		<HR WIDTH="100%">
+		<A NAME="getFirstChild"></A>
+		<H3>getFirstChild</H3>
+		
+		<BLOCKQUOTE><PRE>StyxDomNode*		<B>getFirstChild</B>(void);</PRE></BLOCKQUOTE>
+		Return a pointer to the first child node of this node.<BR><BR>
+		<B>Result: </B>A pointer to a StyxDomNode..<BR><BR>
+		<HR WIDTH="100%">
+		<A NAME="getLastChild"></A>
+		<H3>getLastChild</H3>
+		
+		<BLOCKQUOTE><PRE>StyxDomNode*		<B>getLastChild</B>(void);</PRE></BLOCKQUOTE>
+		Return a pointer to the last child node of this node.<BR><BR>
+		<B>Result: </B>A pointer to a StyxDomNode..<BR><BR>
+		<HR WIDTH="100%">
+		<A NAME="nextSibling"></A>
+		<H3>nextSibling</H3>
+		
+		<BLOCKQUOTE><PRE>StyxDomNode*		<B>nextSibling</B>(void);</PRE></BLOCKQUOTE>
+		Return a pointer to the next sibling node of this node.<BR><BR>
+		<B>Result: </B>A pointer to a StyxDomNode..<BR><BR>
+		<HR WIDTH="100%">
+		<A NAME="prevSibling"></A>
+		<H3>prevSibling</H3>
+		
+		<BLOCKQUOTE><PRE>StyxDomNode*		<B>prevSibling</B>(void);</PRE></BLOCKQUOTE>
+		Return a pointer to the previous sibling node of this node.<BR><BR>
+		<B>Result: </B>A pointer to a StyxDomNode..<BR><BR>
+		<HR WIDTH="100%">
+		<A NAME="getName"></A>
+		<H3>getName</H3>
+		
+		<BLOCKQUOTE><PRE>string		<B>getName</B>(void);</PRE></BLOCKQUOTE>
+		Return the name of this node.<BR><BR>
+		<B>Result: </B>Name string..<BR><BR>
+		<HR WIDTH="100%">
+		<A NAME="getValue"></A>
+		<H3>getValue</H3>
+		
+		<BLOCKQUOTE><PRE>string		<B>getValue</B>(void);</PRE></BLOCKQUOTE>
+		Return the value of this node.<BR><BR>
+		<B>Result: </B>Value string..<BR><BR>
+		<HR WIDTH="100%">
+		<A NAME="setValue"></A>
+		<H3>setValue</H3>
+		
+		<BLOCKQUOTE><PRE>void			<B>setValue</B>(string value);</PRE></BLOCKQUOTE>
+		Change the value string of this node.<BR><BR>
+		<B>Parameters</B>
+		<CENTER><TABLE BORDER="1" WIDTH="80%%">
+			<TR><TD ALIGN="CENTER"><TT>value</TT></TD><TD>&nbsp;The new value string.</TD></TR>
+		</TABLE></CENTER><BR>
+		<HR WIDTH="100%">
+		<A NAME="getType"></A>
+		<H3>getType</H3>
+		
+		<BLOCKQUOTE><PRE>DomNodeType		<B>getType</B>(void);</PRE></BLOCKQUOTE>
+		Return the type of the node.<BR><BR>
+		<B>Result: </B>A DomNodeType value..<BR><BR>
+		<HR WIDTH="100%">
+		<A NAME="getComplete"></A>
+		<H3>getComplete</H3>
+		
+		<BLOCKQUOTE><PRE>bool			<B>getComplete</B>(void);</PRE></BLOCKQUOTE>
+		Return the complete state of this node. If the value is false, the tag isn't closed.<BR><BR>
+		<B>Result: </B>The current complete state..<BR><BR>
+		<HR WIDTH="100%">
+		<A NAME="setComplete"></A>
+		<H3>setComplete</H3>
+		
+		<BLOCKQUOTE><PRE>void			<B>setComplete</B>(bool complete);</PRE></BLOCKQUOTE>
+		Change the value of the complete state of this node. When set to true, the node is considerate closed.<BR><BR>
+		<B>Parameters</B>
+		<CENTER><TABLE BORDER="1" WIDTH="80%%">
+			<TR><TD ALIGN="CENTER"><TT>complete</TT></TD><TD>&nbsp;The new complete state.</TD></TR>
+		</TABLE></CENTER><BR>
+		<HR WIDTH="100%">
+		<A NAME="getNextAttribute"></A>
+		<H3>getNextAttribute</H3>
+		
+		<BLOCKQUOTE><PRE>StyxDomNode*		<B>getNextAttribute</B>(void);</PRE></BLOCKQUOTE>
+		Return the next attribute of this node.<BR><BR>
+		<B>Result: </B>A pointer to a StyxDomNode..<BR><BR>
+		<HR WIDTH="100%">
+		<A NAME="addAttribute"></A>
+		<H3>addAttribute</H3>
+		
+		<BLOCKQUOTE><PRE>StyxDomNode*		<B>addAttribute</B>(string name, string value);</PRE></BLOCKQUOTE>
+		Add an attribute node to the attribute's list of this node.<BR><BR>
+		<B>Parameters</B>
+		<CENTER><TABLE BORDER="1" WIDTH="80%%">
+			<TR><TD ALIGN="CENTER"><TT>name</TT></TD><TD>&nbsp;Name of the new attribute.</TD></TR>
+			<TR><TD ALIGN="CENTER"><TT>value</TT></TD><TD>&nbsp;Value of the new attribute.</TD></TR>
+		</TABLE></CENTER><BR>
+		<B>Result: </B>A pointer to the created StyxDomNode..<BR><BR>
+		<HR WIDTH="100%">
+		<A NAME="addText"></A>
+		<H3>addText</H3>
+		
+		<BLOCKQUOTE><PRE>StyxDomNode*		<B>addText</B>(string text);</PRE></BLOCKQUOTE>
+		Add a text node to the child's list of this node.<BR><BR>
+		<B>Parameters</B>
+		<CENTER><TABLE BORDER="1" WIDTH="80%%">
+			<TR><TD ALIGN="CENTER"><TT>text</TT></TD><TD>&nbsp;The text string of the new node.</TD></TR>
+		</TABLE></CENTER><BR>
+		<B>Result: </B>A pointer to the created StyxDomNode..<BR><BR>
+		<HR WIDTH="100%">
+		<A NAME="addNextNode"></A>
+		<H3>addNextNode</H3>
+		
+		<BLOCKQUOTE><PRE>void			<B>addNextNode</B>(StyxDomNode* node);</PRE></BLOCKQUOTE>
+		Add an existing node as last sibling of this node.<BR><BR>
+		<B>Parameters</B>
+		<CENTER><TABLE BORDER="1" WIDTH="80%%">
+			<TR><TD ALIGN="CENTER"><TT>node</TT></TD><TD>&nbsp;Previously created node which must be added.</TD></TR>
+		</TABLE></CENTER><BR>
+		<HR WIDTH="100%">
+		<A NAME="addChildNode"></A>
+		<H3>addChildNode</H3>
+		
+		<BLOCKQUOTE><PRE>void			<B>addChildNode</B>(StyxDomNode* node);</PRE></BLOCKQUOTE>
+		Add an existing node as last child of this node.<BR><BR>
+		<B>Parameters</B>
+		<CENTER><TABLE BORDER="1" WIDTH="80%%">
+			<TR><TD ALIGN="CENTER"><TT>node</TT></TD><TD>&nbsp;Previously created node which must be added.</TD></TR>
+		</TABLE></CENTER><BR>
+		<HR WIDTH="100%">
+		<A NAME="addNamespace"></A>
+		<H3>addNamespace</H3>
+		
+		<BLOCKQUOTE><PRE>void			<B>addNamespace</B>(string name, string uri);</PRE></BLOCKQUOTE>
+		Add a namespace attribute to this node.<BR><BR>
+		<B>Parameters</B>
+		<CENTER><TABLE BORDER="1" WIDTH="80%%">
+			<TR><TD ALIGN="CENTER"><TT>name</TT></TD><TD>&nbsp;Name of the new namespace.</TD></TR>
+			<TR><TD ALIGN="CENTER"><TT>uri</TT></TD><TD>&nbsp;Universal ressource identifier of the namespace.</TD></TR>
+		</TABLE></CENTER><BR>
+		<HR WIDTH="100%">
+		<A NAME="setNamespace"></A>
+		<H3>setNamespace</H3>
+		
+		<BLOCKQUOTE><PRE>void			<B>setNamespace</B>(StyxDomNode* ancestor);</PRE></BLOCKQUOTE>
+		Search from the given ancestor the namespace which match the name of this node, and set the namespace of it.<BR><BR>
+		<B>Parameters</B>
+		<CENTER><TABLE BORDER="1" WIDTH="80%%">
+			<TR><TD ALIGN="CENTER"><TT>ancestor</TT></TD><TD>&nbsp;The node where the searching begins. If set to NULL, the searching begins with this node.</TD></TR>
+		</TABLE></CENTER><BR>
+		<HR WIDTH="100%">
+		<A NAME="writeDom"></A>
+		<H3>writeDom</H3>
+		
+		<BLOCKQUOTE><PRE>void			<B>writeDom</B>(FILE* file, int nbTab);</PRE></BLOCKQUOTE>
+		Write this representation of this node to the given file.<BR><BR>
+		<B>Parameters</B>
+		<CENTER><TABLE BORDER="1" WIDTH="80%%">
+			<TR><TD ALIGN="CENTER"><TT>file</TT></TD><TD>&nbsp;Stream where the node will be written.</TD></TR>
+			<TR><TD ALIGN="CENTER"><TT>nbTab</TT></TD><TD>&nbsp;Number of tabulations at the beginning of the tag.</TD></TR>
+		</TABLE></CENTER><BR>
+		<HR WIDTH="100%">
+		<A NAME="getDescendants"></A>
+		<H3>getDescendants</H3>
+		
+		<BLOCKQUOTE><PRE>vector<StyxDomNode*>	<B>getDescendants</B>(void);</PRE></BLOCKQUOTE>
+		Return all descendants of this node.<BR><BR>
+		<B>Result: </B>Array of pointers to StyxDomNode..<BR><BR>
+		<HR WIDTH="100%">
+		<A NAME="getDescendantsOrSelf"></A>
+		<H3>getDescendantsOrSelf</H3>
+		
+		<BLOCKQUOTE><PRE>vector<StyxDomNode*>	<B>getDescendantsOrSelf</B>(void);</PRE></BLOCKQUOTE>
+		Return all descendants of this node, plus this node itself.<BR><BR>
+		<B>Result: </B>Array of pointers to StyxDomNode..<BR><BR>
+		<HR WIDTH="100%">
+		<A NAME="getAttributes"></A>
+		<H3>getAttributes</H3>
+		
+		<BLOCKQUOTE><PRE>vector<StyxDomNode*>	<B>getAttributes</B>(string attrName);</PRE></BLOCKQUOTE>
+		Return all matching attributes of this node.<BR><BR>
+		<B>Parameters</B>
+		<CENTER><TABLE BORDER="1" WIDTH="80%%">
+			<TR><TD ALIGN="CENTER"><TT>attrName</TT></TD><TD>&nbsp;Name of searched attributes. If set to an empty string, all attributes will be returned.</TD></TR>
+		</TABLE></CENTER><BR>
+		<B>Result: </B>Array of pointers to StyxDomNode..<BR><BR>
+		<HR WIDTH="100%">
+		<A NAME="getChilds"></A>
+		<H3>getChilds</H3>
+		
+		<BLOCKQUOTE><PRE>vector<StyxDomNode*>	<B>getChilds</B>(string childName);</PRE></BLOCKQUOTE>
+		Return all matching childs of this node.<BR><BR>
+		<B>Parameters</B>
+		<CENTER><TABLE BORDER="1" WIDTH="80%%">
+			<TR><TD ALIGN="CENTER"><TT>childName</TT></TD><TD>&nbsp;Name of searched childs. If set to an empty string, all childs will be returned.</TD></TR>
+		</TABLE></CENTER><BR>
+		<B>Result: </B>Array of pointers to StyxDomNode..<BR><BR>
+		<HR WIDTH="100%">
+		<A NAME="StyxDomNode"></A>
+		<H3>StyxDomNode</H3>
+		
+		<BLOCKQUOTE><PRE><B>StyxDomNode</B>(DomNodeType type, string name, string value, bool isComplete)</PRE></BLOCKQUOTE>
+		Constructor<BR><BR>
+		<HR WIDTH="100%">
+		<A NAME="~StyxDomNode"></A>
+		<H3>~StyxDomNode</H3>
+		
+		<BLOCKQUOTE><PRE><B>~StyxDomNode</B>(void)</PRE></BLOCKQUOTE>
+		Destructor<BR><BR>
+		<HR WIDTH="100%%">
+	</TD></TR></TABLE>
+</CENTER>
+</BODY>
+</HTML>

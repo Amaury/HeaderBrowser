@@ -1,0 +1,123 @@
+<HTML>
+<HEAD>
+	<TITLE>HeaderBrowser - Documentation - Running the program</TITLE>
+	<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+	<META NAME=AUTHOR CONTENT="Amaury Bouchard - amaury@amaury.net">
+	<META NAME=GENERATOR CONTENT="My hands">
+	<META NAME=DESCRIPTION CONTENT="Home site of the HeaderBrowser tool">
+	<META NAME=KEYWORDS CONTENT="programming, c, c++, header files, headerbrowser">
+	<STYLE TYPE="text/css">
+		DIV.para {
+			text-align: justify;
+		}
+		A.baseLink {
+			text-decoration: none;
+			color: blue;
+		}
+		A:hover.baseLink {
+			text-decoration: underline;
+			color: blue;
+		}
+		A:visited.baseLink {
+			text-decoration: none;
+			color: blue;
+        }
+		A:visited:hover.baseLink {
+			text-decoration: underline;
+			color: blue;
+        }
+		A.titleLink {
+			text-decoration: none;
+			color: blue;
+			font-family: Arial;
+		}
+		A:hover.titleLink {
+			text-decoration: underline;
+			color: blue;
+			font-family: Arial;
+		}
+		A:visited.titleLink {
+			text-decoration: none;
+			color: blue;
+			font-family: Arial;
+        }
+		A:visited:hover.titleLink {
+			text-decoration: underline;
+			color: blue;
+			font-family: Arial;
+        }
+		DIV.title {
+			color: black;
+			font-weight: bold;
+			font-family: sans-serif;
+		}
+	</STYLE>
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" TOPMARGIN="1" LEFTMARGIN="1" MARGINWIDTH="1" MARGINHEIGHT="1">
+	<CENTER>
+	<BR><BR>
+	<TABLE WIDTH="590" CELLSPACING="0" CELLPADDING="0" BORDER="0">
+		<TR><TD>
+			<DIV CLASS="para"><FONT size="+1" face="Arial"><B>
+				Header Browser's Documentation : Running the program
+			</B></FONT></DIV>
+		</TD></TR>
+	</TABLE>
+	<BR>
+	<HR WIDTH="590" SIZE="1" NOSHADE="TRUE">
+	<BR>
+	<TABLE WIDTH="590" CELLSPACING="0" CELLPADDING="0" BORDER="0">
+		<TR><TD COLSPAN="3">
+			<DIV CLASS="title">Create documentation</DIV>
+			<DIV CLASS="para">
+				When you have a ready to use version of Header Browser, you could execute it from the command line to create documentation. The default output is HTML, with the particular Header Browser's five columns view, which is really fast and easy to use to explore APIs. See these examples&nbsp;:<P>
+
+				<CODE>$ headerbrowser foo.h</CODE>
+				<BLOCKQUOTE>
+					Create a 'hbresult-html' directory in the current one, and put in it the HTML documentation resulting of the foo.h header file.
+				</BLOCKQUOTE>
+				<CODE>$ headerbrowser *.h</CODE>
+				<BLOCKQUOTE>Same as previous, but the documentation contains all header files.</BLOCKQUOTE>
+				<CODE>$ headerbrowser -o ../tmp foo.h</CODE>
+				<BLOCKQUOTE>Use the '-o' option for setting the directory where 'hbresult-html' will be created.</BLOCKQUOTE>
+				<CODE>$ headerbrowser -t h2h *.h</CODE>
+				<BLOCKQUOTE>
+					Use the '-t' option for setting the conversion type.<BR>
+					Conversion type could be:
+					<UL>
+						<LI>h2h: header to HTML
+						<LI>h2x: header to XHB (XML format used in HeaderBrowser)
+						<LI>x2h: XHB to HTML
+					</UL>
+					The default conversion is "h2h".<BR>
+					Conversion creates:
+					<UL>
+						<LI>HTML conversion creates 'hbresult-html' directory.
+						<LI>XHB conversion creates 'hbresult.xhb' file.
+					</UL>
+				</BLOCKQUOTE>
+				<CODE>$ headerbrowser -l eng *.h</CODE>
+				<BLOCKQUOTE>
+					Use the '-l' option for setting the output language.<BR>
+					Language could be:
+					<UL>
+						<LI>eng: english
+						<LI>fr: french
+					</UL>
+				</BLOCKQUOTE>
+			</DIV>
+			<P>
+			<CENTER>
+				<A HREF="all_tags.html" CLASS="baseLink">Previous Page : All tags recapitulation</A><BR>
+				<A HREF="index.html" CLASS="baseLink">Return to main page</A>
+			</CENTER>
+		</TD></TR>
+		<TR><TD COLSPAN="3"><BR><HR WIDTH="590" SIZE="1" NOSHADE></TD></TR>
+		<TR>
+			<TD WIDTH="280" ALIGN="RIGHT"><FONT SIZE="-2" face="Arial">Copyright &copy; 2000-2001</FONT></TD>
+			<TD WIDTH="30" ALIGN="CENTER"><FONT SIZE="-2" face="Arial">&nbsp;|&nbsp;</FONT></TD>
+			<TD WIDTH="280" ALIGN="LEFT"><FONT SIZE="-2" face="Arial"><A HREF="licence.html" CLASS="baseLink">Licence informations</A></FONT></TD>
+		</TR>
+	</TABLE>
+</BODY>
+</HTML>

@@ -1,0 +1,106 @@
+<HTML>
+<HEAD>
+	<TITLE>HeaderBrowser - Documentation - Introduction</TITLE>
+	<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+	<META NAME=AUTHOR CONTENT="Amaury Bouchard - amaury@amaury.net">
+	<META NAME=GENERATOR CONTENT="My hands">
+	<META NAME=DESCRIPTION CONTENT="Home site of the HeaderBrowser tool">
+	<META NAME=KEYWORDS CONTENT="programming, c, c++, header files, headerbrowser">
+	<STYLE TYPE="text/css">
+		DIV.para {
+			text-align: justify;
+		}
+		A.baseLink {
+			text-decoration: none;
+			color: blue;
+		}
+		A:hover.baseLink {
+			text-decoration: underline;
+			color: blue;
+		}
+		A:visited.baseLink {
+			text-decoration: none;
+			color: blue;
+        }
+		A:visited:hover.baseLink {
+			text-decoration: underline;
+			color: blue;
+        }
+		A.titleLink {
+			text-decoration: none;
+			color: blue;
+			font-family: Arial;
+		}
+		A:hover.titleLink {
+			text-decoration: underline;
+			color: blue;
+			font-family: Arial;
+		}
+		A:visited.titleLink {
+			text-decoration: none;
+			color: blue;
+			font-family: Arial;
+        }
+		A:visited:hover.titleLink {
+			text-decoration: underline;
+			color: blue;
+			font-family: Arial;
+        }
+		DIV.title {
+			color: black;
+			font-weight: bold;
+			font-family: sans-serif;
+		}
+	</STYLE>
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" TOPMARGIN="1" LEFTMARGIN="1" MARGINWIDTH="1" MARGINHEIGHT="1">
+	<CENTER>
+	<BR><BR>
+	<TABLE WIDTH="590" CELLSPACING="0" CELLPADDING="0" BORDER="0">
+		<TR><TD>
+			<DIV CLASS="para"><FONT size="+1" face="Arial"><B>
+				Header Browser's Documentation : Introduction
+			</B></FONT></DIV>
+		</TD></TR>
+	</TABLE>
+	<BR>
+	<HR WIDTH="590" SIZE="1" NOSHADE="TRUE">
+	<BR>
+	<TABLE WIDTH="590" CELLSPACING="0" CELLPADDING="0" BORDER="0">
+		<TR><TD COLSPAN="3">
+			<DIV CLASS="title">What is it ?</DIV>
+			<DIV CLASS="para">
+				When you create functions libraries in C or C++ (even in other languages, but we focus on these ones), you must do a documentation. The other coders who are going to use your libraries have just to know what is inside of your files, <I>what is the API</I>.<BR>
+				Header Browser's goal is to help you in writing these documentations. You just have to write special comments inside of your header files. Here is a simple example of Header Browser comment for a function :
+				<PRE>/*!
+ * @function    cookChicken
+ * @abstract    Cook a chicken with the given sauce.
+ * @discussion  This function take a chicken, draw it, prepare
+                it with the wanted sauce, and roast it.
+ * @param       weight    The weight of the chicken.
+ * @param       sauce     The sauce for cooking. Could be a
+			  NULL pointer.
+ * @result      A pointer to the cooked chicken.
+*/
+chicken_t	*cookChicken(int weight, spice_t sauce);</PRE>
+				Processed with Header Browser, these comments will generate your documentation in several formats (TexInfo for Postscript, DVI or PDF output, man pages, printable HTML, ...).<BR>
+				The recommended output format is the default HTML output. It displays the informations clearly and efficiently. <A HREF="../../example/hbresult-html/index.html" CLASS="baseLink">Try it</A> and you will never write your documentations by an other mean :-)
+			</DIV>
+			<P>
+			<DIV CLASS="title">Get, compile and install it</DIV>
+			<DIV CLASS="para">
+				The <A HREF="http://www.headerbrowser.org/download" CLASS="baseLink">Download page</A> offer to you different files. If you want to get the source code of Header Browser, download the lastest version, unpack it, and read the README and the INSTALL files.<BR>
+				If you just want to execute Header Browser on your computer, download directly the binary relative to your architecture.
+			</DIV>
+			<P>
+			<CENTER><A HREF="hb_comments.html" CLASS="baseLink">Next Page : HeaderBrowser Comments</A></CENTER>
+		</TD></TR>
+		<TR><TD COLSPAN="3"><BR><HR WIDTH="590" SIZE="1" NOSHADE></TD></TR>
+		<TR>
+			<TD WIDTH="280" ALIGN="RIGHT"><FONT SIZE="-2" face="Arial">Copyright &copy; 2000-2001</FONT></TD>
+			<TD WIDTH="30" ALIGN="CENTER"><FONT SIZE="-2" face="Arial">&nbsp;|&nbsp;</FONT></TD>
+			<TD WIDTH="280" ALIGN="LEFT"><FONT SIZE="-2" face="Arial"><A HREF="licence.html" CLASS="baseLink">Licence informations</A></FONT></TD>
+		</TR>
+	</TABLE>
+</BODY>
+</HTML>

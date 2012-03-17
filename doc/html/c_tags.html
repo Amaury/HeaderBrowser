@@ -1,0 +1,245 @@
+<HTML>
+<HEAD>
+	<TITLE>HeaderBrowser - Documentation - C/C++ Comments</TITLE>
+	<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+	<META NAME=AUTHOR CONTENT="Amaury Bouchard - amaury@amaury.net">
+	<META NAME=GENERATOR CONTENT="My hands">
+	<META NAME=DESCRIPTION CONTENT="Home site of the HeaderBrowser tool">
+	<META NAME=KEYWORDS CONTENT="programming, c, c++, header files, headerbrowser">
+	<STYLE TYPE="text/css">
+		DIV.para {
+			text-align: justify;
+		}
+		A.baseLink {
+			text-decoration: none;
+			color: blue;
+		}
+		A:hover.baseLink {
+			text-decoration: underline;
+			color: blue;
+		}
+		A:visited.baseLink {
+			text-decoration: none;
+			color: blue;
+        }
+		A:visited:hover.baseLink {
+			text-decoration: underline;
+			color: blue;
+        }
+		A.titleLink {
+			text-decoration: none;
+			color: blue;
+			font-family: Arial;
+		}
+		A:hover.titleLink {
+			text-decoration: underline;
+			color: blue;
+			font-family: Arial;
+		}
+		A:visited.titleLink {
+			text-decoration: none;
+			color: blue;
+			font-family: Arial;
+        }
+		A:visited:hover.titleLink {
+			text-decoration: underline;
+			color: blue;
+			font-family: Arial;
+        }
+		DIV.title {
+			color: black;
+			font-weight: bold;
+			font-family: sans-serif;
+		}
+	</STYLE>
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" TOPMARGIN="1" LEFTMARGIN="1" MARGINWIDTH="1" MARGINHEIGHT="1">
+	<CENTER>
+	<BR><BR>
+	<TABLE WIDTH="590" CELLSPACING="0" CELLPADDING="0" BORDER="0">
+		<TR><TD>
+			<DIV CLASS="para"><FONT size="+1" face="Arial"><B>
+				Header Browser's Documentation : C/C++ tags
+			</B></FONT></DIV>
+		</TD></TR>
+	</TABLE>
+	<BR>
+	<HR WIDTH="590" SIZE="1" NOSHADE="TRUE">
+	<BR>
+	<TABLE WIDTH="590" CELLSPACING="0" CELLPADDING="0" BORDER="0">
+		<TR><TD COLSPAN="3">
+			<DIV CLASS="title">@var</DIV>
+			<DIV CLASS="para">
+				The <CODE>@var</CODE> tag take one argument : the name of the global variable. Type it exactly as the variable name, and mind to put this HeaderBrowser comment just before the variable declaration.
+<PRE>/*!
+ * @var         homerBeer
+ * @abstract    Current Homer's beer.
+ * @discussion  Global pointer to the beer that Homer is
+ *              drinking.
+*/
+beer_t      *homerBeer;
+
+/*! @var lisaSolo   Score of the Lisa's saxophone solo */
+saxoScore   *lisaSolo;</PRE>
+			</DIV>
+			<P>
+			<DIV CLASS="title">@function</DIV>
+			<DIV CLASS="para">
+				The <CODE>@function</CODE> tag take one argument : the name of the function. Type it exactly as the function name, and mind to put this HeaderBrowser comment just before the function declaration. There is two tags that you could use in <I>function</I> tags.<BR>
+
+				<BLOCKQUOTE>
+					<CODE><B>@param</B></CODE>: takes two arguments, the name of the parameter and a descriptive text relative to the parameter. You could type as many <I>param</I> tags as there is parameters in the function. Try to write the <I>param</I> tags in the same order than in function declaration.<P>
+
+					<CODE><B>@result</B></CODE> (or <CODE>@return</CODE> for JavaDoc addicts): has just one argument, a text that identify the return value of the function. It is not necessary to put a <I>result</I> tag if the return type is <I>void</I>.<P>
+				</BLOCKQUOTE>
+
+				See this example :
+<PRE>/*!
+ * @function    cookChicken
+ * @abstract    Cook a chicken with the given sauce.
+ * @discussion  This function take a chicken, draw it, prepare
+ *              it with the wanted sauce, and roast it.
+ * @param       weight    The weight of the chicken.
+ * @param       sauce     The sauce for cooking. Could be a
+ *                        NULL pointer.
+ * @result      A pointer to the cooked chicken.
+*/
+chicken_t	*cookChicken(int weight, spice_t sauce);</PRE>
+			</DIV>
+			<P>
+			<DIV CLASS="title">@struct</DIV>
+			<DIV CLASS="para">
+				<BLOCKQUOTE>
+					<CODE><B>@field</B></CODE>: takes two arguments, the name of the field and a descriptive text relative to this field. You could put as many <I>field</I> tags as there is fields in the structure.
+				</BLOCKQUOTE>
+<PRE>/*!
+ * @struct      chicken_s
+ * @abstract    Contains all chicken's properties.
+ * @discussion  All properties of chickens (weight, color, ...)
+ *              are stored in this structure.
+ * @field       color     Hexadecimal color value.
+ * @field       weight    Weight of the chicken in kg.
+ * @field       age       How old the chicken is.
+*/
+struct       chicken_s {
+    color_t  color;
+    int      weight;
+    int      age;
+};</PRE>
+			</DIV>
+			<P>
+			<DIV CLASS="title">@union</DIV>
+			<DIV CLASS="para">
+				This tag is similar to the <I>struct</I> tag.
+<PRE>/*!
+ * @union       character_u
+ *              A movie character.
+ * @field       cool      A Simpson's family person.
+ * @field       brave     A Jedi knight.
+ * @field       sexy      A baywatch actress.
+*/
+union            character_u {
+    simpson_t    *cool;
+    jedi_t       *brave;
+    falsy_t      *sexy;
+};</PRE>
+			</DIV>
+			<P>
+			<DIV CLASS="title">@enum</DIV>
+			<DIV CLASS="para">
+				<BLOCKQUOTE>
+					<CODE><B>@constant</B></CODE>: takes two arguments, the name of the constant and a descriptive text relative to this constant. You could put as many <I>constant</I> tags as there is constants in the enumeration.
+				</BLOCKQUOTE>
+<PRE>/*!
+ * @enum        fuzzyLogicBoolean_e
+ *              Boolean values for fuzzy logic.
+ * @constant    FALSE     False value.
+ * @constant    TRUE      True value.
+ * @constant    PERHAPS   New value, between true and false.
+*/
+enum   fuzzyLogicBoolean_e {
+    FALSE = 0,
+    TRUE,
+    PERHAPS
+};</PRE>
+			</DIV>
+			<P>
+			<DIV CLASS="title">@typedef</DIV>
+			<DIV CLASS="para">
+				You could use this tag when you do a definition of type. It takes just one of the following sub-tags type at the same time.
+				<BLOCKQUOTE>
+					<CODE><B>@field</B></CODE>: used when it is a type definition for a structure or an union.<P>
+
+					<CODE><B>@constant</B></CODE>: used when it is for an enumeration type.<P>
+
+					<CODE><B>@param</B></CODE>: used when it is function pointer type.
+				</BLOCKQUOTE>
+<PRE>/*!
+ * @typedef     cakeRecipe_t
+ *              Recipe for most of cakes.
+ * @field       eggs     Number of eggs in the cake.
+ * @field       milk     Quantity of milk (in litre).
+ * @field       choco    Set to TRUE if chocolate is needed.
+*/
+typedef struct   cakeRecipe_s {
+    int          eggs,
+    int          milk,
+    bool         choco
+}                cakeRecipe_t;
+
+/*!
+ * @typedef     day_t
+ *              All week's days.
+ * @constant    SUNDAY     First day of week.
+ * @constant    MONDAY     Second day of week.
+ * @constant    TUESDAY    Third day of week.
+ * @constant    WEDNESDAY  Fourth day of week.
+ * @constant    THURSDAY   Fifth day of week.
+ * @constant    FRIDAY     Sixth day of week.
+ * @constant    SATURDAY   seventh day of week.
+*/
+typedef enum     day_e {
+    SUNDAY = 0,
+    MONDAY,
+    TUESDAY,
+    WEDNESDAY,
+    THURSDAY,
+    FRIDAY,
+    SATURDAY
+}                day_t;
+
+/*!
+ * @typedef     crashtestHandler
+ *              Function pointer to a crash test action.
+ * @param       car          The car on which the test is done.
+ * @param       passengers   Number of passengers.
+ * @param       speed        Speed of the car.
+*/
+typedef void (*crastestHandler)(car_t *car, int passengers,
+                                int speed);</PRE>
+			</DIV>
+			<P>
+			<DIV CLASS="title">@define / @defined</DIV>
+			<DIV CLASS="para">
+				This tag takes one argument: the name of the constant. You should explain it utility in the <I>abstract</I> tag. Even if Header Browser do the difference between "constant-like" and "function-like" macros, you don't have anything to do; the difference is set with the source code of the macro.
+<PRE>/*! @define HOMER_SON   Name of the Homer's son */
+#define HOMER_SON              "Bart"
+
+/*! @define IS_HOMER_SON  True if it is Bart */
+#define IS_HOMER_SON(name)     (!strcmp(name, HOMER_SON))</PRE>
+			</DIV>
+			<P>
+			<CENTER>
+				<A HREF="hb_comments.html" CLASS="baseLink">Previous Page : HeaderBrowser comments</A><BR>
+				<A HREF="cpp_tags.html" CLASS="baseLink">Next Page : C++ specific tags</A>
+			</CENTER>
+		</TD></TR>
+		<TR><TD COLSPAN="3"><BR><HR WIDTH="590" SIZE="1" NOSHADE></TD></TR>
+		<TR>
+			<TD WIDTH="280" ALIGN="RIGHT"><FONT SIZE="-2" face="Arial">Copyright &copy; 2000-2001</FONT></TD>
+			<TD WIDTH="30" ALIGN="CENTER"><FONT SIZE="-2" face="Arial">&nbsp;|&nbsp;</FONT></TD>
+			<TD WIDTH="280" ALIGN="LEFT"><FONT SIZE="-2" face="Arial"><A HREF="licence.html" CLASS="baseLink">Licence informations</A></FONT></TD>
+		</TR>
+	</TABLE>
+</BODY>
+</HTML>

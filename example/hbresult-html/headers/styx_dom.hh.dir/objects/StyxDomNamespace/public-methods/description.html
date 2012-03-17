@@ -1,0 +1,55 @@
+<HTML>
+<BODY BGCOLOR="#FFFFFF">
+<FONT SIZE="-1">/&nbsp;styx_dom.hh&nbsp;/&nbsp;Objects&nbsp;/&nbsp;StyxDomNamespace&nbsp;/&nbsp;Public Methods&nbsp;/&nbsp;Description</FONT>
+<CENTER>
+	<H1>Public Methods</H1>
+	<BR>
+	<TABLE WIDTH="80%"><TR><TD>		<HR WIDTH="100%">
+		<A NAME="getName"></A>
+		<H3>getName</H3>
+		
+		<BLOCKQUOTE><PRE>string		<B>getName</B>(void);</PRE></BLOCKQUOTE>
+		Return the namespace's name.<BR><BR>
+		<B>Result: </B>Namespace's name..<BR><BR>
+		<HR WIDTH="100%">
+		<A NAME="getUri"></A>
+		<H3>getUri</H3>
+		
+		<BLOCKQUOTE><PRE>string		<B>getUri</B>(void);</PRE></BLOCKQUOTE>
+		Return the namespace's uri.<BR><BR>
+		<B>Result: </B>Namespace's uri..<BR><BR>
+		<HR WIDTH="100%">
+		<A NAME="getNextSibling"></A>
+		<H3>getNextSibling</H3>
+		
+		<BLOCKQUOTE><PRE>StyxDomNamespace*	<B>getNextSibling</B>(void);</PRE></BLOCKQUOTE>
+		Return a pointer to the next sibling of this node in the namespace list.<BR><BR>
+		<B>Result: </B>A pointer to a StyxDomNamespace..<BR><BR>
+		<HR WIDTH="100%">
+		<A NAME="addSibling"></A>
+		<H3>addSibling</H3>
+		
+		<BLOCKQUOTE><PRE>void			<B>addSibling</B>(StyxDomNamespace* ns);</PRE></BLOCKQUOTE>
+		Add an existing StyxDomNamespace as last sibling of this node.<BR><BR>
+		<B>Parameters</B>
+		<CENTER><TABLE BORDER="1" WIDTH="80%%">
+			<TR><TD ALIGN="CENTER"><TT>ns</TT></TD><TD>&nbsp;A pointer to a previously created StyxDomNamespace.</TD></TR>
+		</TABLE></CENTER><BR>
+		<HR WIDTH="100%">
+		<A NAME="getRootNode"></A>
+		<H3>getRootNode</H3>
+		
+		<BLOCKQUOTE><PRE>StyxDomNode*		<B>getRootNode</B>(void);</PRE></BLOCKQUOTE>
+		Return a pointer to the node where is declared this namespace.<BR><BR>
+		<B>Result: </B>A pointer to a StyxDomNode..<BR><BR>
+		<HR WIDTH="100%">
+		<A NAME="StyxDomNamespace"></A>
+		<H3>StyxDomNamespace</H3>
+		
+		<BLOCKQUOTE><PRE><B>StyxDomNamespace</B>(StyxDomNode* root, string name, string uri)</PRE></BLOCKQUOTE>
+		Constructor<BR><BR>
+		<HR WIDTH="100%%">
+	</TD></TR></TABLE>
+</CENTER>
+</BODY>
+</HTML>

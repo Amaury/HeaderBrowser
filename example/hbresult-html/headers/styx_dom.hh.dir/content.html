@@ -1,0 +1,226 @@
+<HTML>
+<BODY BGCOLOR="#FFFFFF">
+<FONT SIZE="-1">/&nbsp;styx_dom.hh&nbsp;/&nbsp;Content</FONT>
+<PRE>
+#ifndef	__STYX_DOM_H__
+#define	__STYX_DOM_H__
+
+#include <vector>
+#include "styx.hh"
+#include "styx_sax.hh"
+
+
+typedef enum	DomNodeType_e
+{
+  VOID_NODE = 0,
+  ELEMENT_NODE,
+  ATTRIBUTE_NODE,
+  TEXT_NODE,
+  CDATA_SECTION_NODE,
+  ENTITY_REFERENCE_NODE,
+  ENTITY_NODE,
+  PROCESSING_INSTRUCTION_NODE,
+  COMMENT_NODE,
+  DOCUMENT_NODE,
+  DOCUMENT_TYPE_NODE,
+  DOCUMENT_FRAGMENT_NODE,
+  NOTATION_NODE
+}		DomNodeType;
+
+/* default node name definitions */
+
+#define	TEXT_NODE_NAME			"#text"
+
+#define	CDATA_SECTION_NODE_NAME		"#cdata-section"
+
+#define	COMMENT_NODE_NAME		"#comment"
+
+#define	DOCUMENT_NODE_NAME		"#document"
+
+#define	DOCUMENT_FRAGMENT_NODE_NAME	"#document-fragment"
+
+class	StyxSax;
+class	StyxSaxAttr;
+class	StyxDom;
+class	StyxDomNode;
+class	StyxDomNamespace;
+
+
+class		StyxDom : StyxSax
+{
+public:
+  
+  bool			readFile(char* filename);
+  
+  bool			writeDom(FILE* file);
+  
+  void			addNode(StyxDomNode* node);
+  
+  vector<StyxDomNode*>	getFromXpath(string path);
+  
+  vector<StyxDomNode*>	getNodesFromXpath(vector<StyxDomNode*> l, string path);
+  
+  StyxDom(void);
+  
+  ~StyxDom(void);
+  
+  static vector<StyxDomNode*>	_rm_equals(vector<StyxDomNode*> l);
+  
+  static vector<StyxDomNode*>	_merge_vectors(vector<StyxDomNode*> v1,
+				       vector<StyxDomNode*> v2);
+private:
+  
+  StyxDomNode		*documentElement;
+  
+  StyxDomNode		*currentParsedNode;
+  
+  bool			error;
+  
+  string		xmlVersion;
+  
+  string		encoding;
+  
+  string		standalone;
+  
+  void			openTagHandler(string name, vector<StyxSaxAttr*> attr);
+  
+  void			insideTextHandler(char c);
+  
+  void			closeTagHandler(string tagName);
+  
+  void			commentHandler(string content);
+  
+  void			processingInstructionHandler(string target,
+						     string content);
+  
+  void			cdataHandler(string content);
+  
+  void			errorHandler(int line);
+  
+  bool			_xpathContainsPipe(string str);
+  
+  string		_getNextXpathName(const char **str);
+};
+
+
+class			StyxDomNode
+{
+public:
+  
+  StyxDomNode*		getRoot(void);
+  
+  StyxDomNode*		getParent(void);
+  
+  StyxDomNode*		getFirstChild(void);
+  
+  StyxDomNode*		getLastChild(void);
+  
+  StyxDomNode*		nextSibling(void);
+  
+  StyxDomNode*		prevSibling(void);
+  
+  string		getName(void);
+  
+  string		getValue(void);
+  
+  void			setValue(string value);
+  
+  DomNodeType		getType(void);
+  
+  bool			getComplete(void);
+  
+  void			setComplete(bool complete);
+  
+  StyxDomNode*		getNextAttribute(void);
+  
+  StyxDomNode*		addAttribute(string name, string value);
+  
+  StyxDomNode*		addText(string text);
+  
+  void			addNextNode(StyxDomNode* node);
+  
+  void			addChildNode(StyxDomNode* node);
+  
+  void			addNamespace(string name, string uri);
+  
+  void			setNamespace(StyxDomNode* ancestor);
+  
+  void			writeDom(FILE* file, int nbTab);
+  
+  vector<StyxDomNode*>	getDescendants(void);
+  
+  vector<StyxDomNode*>	getDescendantsOrSelf(void);
+  
+  vector<StyxDomNode*>	getAttributes(string attrName);
+  
+  vector<StyxDomNode*>	getChilds(string childName);
+  
+  StyxDomNode(DomNodeType type, string name, string value, bool isComplete);
+  
+  ~StyxDomNode(void);
+private:
+  
+  DomNodeType		type;
+  
+  bool			complete;
+  
+  string		name;
+  
+  string		value;
+  
+  StyxDomNode		*parent;
+  
+  StyxDomNode		*prev;
+  
+  StyxDomNode		*next;
+  
+  StyxDomNode*		attributes;
+  
+  StyxDomNode		*firstChild;
+  
+  StyxDomNode		*lastChild;
+  
+  StyxDomNode		*document;
+  
+  StyxDomNamespace	*namingspace;
+  
+  StyxDomNamespace	*xmlnsAttributes;
+  
+  void			writeNamespace(FILE* file);
+  
+  void			writeAttr(FILE* file);
+};
+
+
+class			StyxDomNamespace
+{
+public:
+  
+  string		getName(void);
+  
+  string		getUri(void);
+  
+  StyxDomNamespace*	getNextSibling(void);
+  
+  void			addSibling(StyxDomNamespace* ns);
+  
+  StyxDomNode*		getRootNode(void);
+  
+  StyxDomNamespace(StyxDomNode* root, string name, string uri);
+private:
+  
+  string		name;
+  
+  string		uri;
+  
+  StyxDomNode*		rootNode;
+  
+  StyxDomNamespace*	prev;
+  
+  StyxDomNamespace	*next;
+};
+
+#endif /* __STYX_DOM_H__ */
+</PRE>
+</BODY>
+</HTML>
