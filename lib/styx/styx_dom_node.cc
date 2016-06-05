@@ -70,21 +70,19 @@ StyxDomNode*	StyxDomNode::addAttribute(string name, string value)
     {  
       addNamespace(name, value);
       setNamespace(this);
+      return (NULL);
     }
+  attr = new StyxDomNode(ATTRIBUTE_NODE, name, value, true);
+  if (!attributes)
+    attributes = attr;
   else
     {
-      attr = new StyxDomNode(ATTRIBUTE_NODE, name, value, true);
-      if (!attributes)
-	attributes = attr;
-      else
-	{
-	  for (pt = attributes; pt->next; pt = pt->next)
-	    ;
-	  pt->next = attr;
-	  attr->prev = pt;
-	}
+      for (pt = attributes; pt->next; pt = pt->next)
+        ;
+      pt->next = attr;
+      attr->prev = pt;
     }
- 
+  return (attr);
 }
 
 StyxDomNode*	StyxDomNode::addText(string text)

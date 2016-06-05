@@ -132,7 +132,7 @@ void	StyxDom::processingInstructionHandler(string target, string content)
 
   if (target == XML)
     {
-      if (content.size() && (pt = strstr(content.c_str(), XML_VERSION)))
+      if (content.size() && (pt = (char*)strstr(content.c_str(), XML_VERSION)))
 	{
 	  if ((pt = strchr(pt, STYX_EQUAL)) &&
 	      (pt = strchr(pt, STYX_DOUBLE_QUOTE)) &&
@@ -145,7 +145,7 @@ void	StyxDom::processingInstructionHandler(string target, string content)
 	      free(res);
 	    }
 	}
-      if (content.size() && (pt = strstr(content.c_str(), ENCODING)))
+      if (content.size() && (pt = (char*)strstr(content.c_str(), ENCODING)))
 	{
 	  if ((pt = strchr(pt, STYX_EQUAL)) &&
 	      (pt = strchr(pt, STYX_DOUBLE_QUOTE)) &&
@@ -158,7 +158,7 @@ void	StyxDom::processingInstructionHandler(string target, string content)
 	      free(res);
 	    }
 	}
-      if (content.size() && (pt = strstr(content.c_str(), STANDALONE)))
+      if (content.size() && (pt = (char*)strstr(content.c_str(), STANDALONE)))
 	{
 	  if ((pt = strchr(pt, STYX_EQUAL)) &&
 	      (pt = strchr(pt, STYX_DOUBLE_QUOTE)) &&
